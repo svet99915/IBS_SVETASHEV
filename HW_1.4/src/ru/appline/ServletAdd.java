@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import ru.appline.logic.Model;
 import ru.appline.logic.User;
+import sun.applet.Main;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,12 +15,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.concurrent.atomic.AtomicInteger;
-//import java.util.logging.*;
+import java.util.logging.*;
 
 
 @WebServlet(urlPatterns = "/add")
 public class ServletAdd extends HttpServlet {
-   // Logger LOGGER;
+    Logger LOGGER;
+
     private AtomicInteger counter = new AtomicInteger(3);
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     Model model = Model.getInstance();
@@ -43,9 +45,12 @@ public class ServletAdd extends HttpServlet {
 //    }
 
 
+
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
 
-      //  LOGGER.log(Level.WARNING,",ща будет 48 cтрочка, УКУСИ МЕНЯ ПЧЕЛА");
+        LOGGER = Logger.getLogger(Main.class.getName());
+       LOGGER.log(Level.WARNING,",ща будет 48 cтрочка, УКУСИ МЕНЯ ПЧЕЛА");
         StringBuffer jb = new StringBuffer();
         String line;
 
@@ -62,6 +67,7 @@ public class ServletAdd extends HttpServlet {
 
         JsonObject jobj = gson.fromJson(String.valueOf(jb), JsonObject.class);
 
+        
 
 
             request.setCharacterEncoding("UTF-8");

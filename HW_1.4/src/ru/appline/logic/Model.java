@@ -26,11 +26,26 @@ public class Model implements Serializable {
         model.put(3, new User("Dima", "Popov", 77777));
 
     }
-    public void add(User user, int id){
-        model.put(id,user);
+    public void add(User user, int id)
+    {
+        model.put(id, user);
+
+    }
+
+    public void delete(int id)
+    {
+        //hash_map.keySet()
+        model.keySet().removeIf(key->id !=1);
 
 
     }
+    public void put(User user,int id)
+    {
+        model.replace(id, user);
+
+    }
+
+
 
     public Map<Integer, User> getFromList(){
 
