@@ -1,20 +1,38 @@
 package ru.appline.logic;
 
 public class Pet {
-
+    /*
+    {
+        "name": "KOKO",
+        "type": "Chik",
+        "age": "2"
+    }
+     */
     private String name;
 
     private String type;
 
     private int age;
 
-    public Pet(){
+    public Pet() {
         super();
     }
 
     public Pet(String name, String type, int age) {
         this.name = name;
         this.type = type;
+        this.age = age;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -29,16 +47,5 @@ public class Pet {
     public int getAge() {
         return age;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }
+
